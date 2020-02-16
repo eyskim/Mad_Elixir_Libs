@@ -1,0 +1,10 @@
+/* This file is for your main application css. */
+
+@import "./phoenix.css";
+
+.help-block {
+    color: red;
+    font-size: 10px;
+    text-transform: capitalize;
+    top: 35px;
+}

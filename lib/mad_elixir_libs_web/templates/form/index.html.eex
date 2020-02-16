@@ -1,0 +1,32 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Mad Elixir-Libs" %></h1>
+  <p>Fill in the blanks below for a surprise in your inbox!</p>
+</section>
+
+<section class="row">
+  <article class="column">
+    <%= form_for @changeset, Routes.form_path(@conn, :create), fn f -> %>
+      <label>
+        Name: <%= text_input f, :name %>
+        <%= error_tag f, :name%>
+      </label>
+      <label>
+        Any Number: <%= number_input f, :number%>
+        <%= error_tag f, :number%>
+      </label>
+      <label>
+        Worst Ice-cream Flavour: <%= text_input f, :least_fav_ice_cream_flavour%>
+        <%= error_tag f, :least_fav_ice_cream_flavour%>
+      </label>
+      <label>
+        Favourite Programming Language: <%= text_input f, :fav_programming_language%>
+        <%= error_tag f, :fav_programming_language%>
+      </label>
+      <label>
+        Your Email: <%= email_input f, :email, placeholder: "valid@email.com"%>
+        <%= error_tag f, :email%>
+      </label>
+      <%= submit "Lib Away!", class: "btn btn-primary" %>
+    <% end %>
+  </article>
+</section>
